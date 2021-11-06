@@ -1,0 +1,2 @@
+./vendor/bin/sail up
+npm run watch
