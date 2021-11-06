@@ -9,5 +9,15 @@ class CryptoCurrencies extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'crypto_id',
+        'title'
+    ];
+
     public $incrementing = false;
+
+    public function transactions()
+    {
+        return $this->hasMany(CryptoTransactions::class);
+    }
 }

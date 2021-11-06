@@ -1,2 +1,8 @@
 ./vendor/bin/sail up
 npm run watch
+
+URL:
+http://localhost:8000/
+
+For pgadmin4:
+http://localhost/pgadmin4/

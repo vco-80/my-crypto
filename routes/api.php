@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Controllers\CryptoCurrenciesController;
+use Illuminate\Http\Controllers\CryptoTransactionsController;
 
 /*
 |--------------------------------------------------------------------------

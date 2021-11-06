@@ -15,8 +15,9 @@ class CreateCryptoCurrenciesTable extends Migration
     {
         Schema::create('crypto_currencies', function (Blueprint $table) {
             $table->id();
-            $table->string('short_title', 10);
-            $table->string('long_title', 50);
+            $table->timestamps();
+            $table->string('crypto_id', 10)->unique(); # Abbrevation like 'btc' (lower case)
+            $table->string('title', 50);
         });
 
         // CreateCryptoCurrenciesTable::upsert([

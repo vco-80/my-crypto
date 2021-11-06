@@ -2,7 +2,7 @@ const mix = require('laravel-mix');
 
 const path = require('path');
 
-var VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin');
+var VuetifyLoader = require('vuetify-loader/lib/plugin');
 var webpackConfig = {
     resolve: {
         extensions: ['.js', '.vue'],
@@ -11,7 +11,7 @@ var webpackConfig = {
         },
     },
     plugins: [
-        new VuetifyLoaderPlugin()
+        new VuetifyLoader()
     ]
 };
 mix.webpackConfig(webpackConfig);

@@ -16,6 +16,14 @@ class CreateCryptoTransactionsTable extends Migration
         Schema::create('crypto_transactions', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->enum('type', ['buy', 'sell']);
+            $table->decimal('amount');
+            $table->decimal('price');
+            $table->decimal('total');
+            $table->tinyText('currency')->default('CHF');
+            $table->date('date');
+
+            $table->foreignId('currency_id')->constrained('crypto_currencies');
         });
     }
 

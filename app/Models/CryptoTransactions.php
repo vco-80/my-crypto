@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class CryptoTransactions extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'type',
+        'amount',
+        'price',
+        'total',
+        'currency',
+        'date'
+    ];
 }
