@@ -2,8 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Controllers\CryptoCurrenciesController;
-use Illuminate\Http\Controllers\CryptoTransactionsController;
+use App\Http\Controllers\CryptoTransactionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +18,7 @@ use Illuminate\Http\Controllers\CryptoTransactionsController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('portfolio', [CryptoTransactionsController::class, 'getGrouped']);
+
+Route::post('add', [CryptoTransactionsController::class, 'create']);

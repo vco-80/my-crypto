@@ -16,14 +16,15 @@ class CreateCryptoTransactionsTable extends Migration
         Schema::create('crypto_transactions', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->enum('type', ['buy', 'sell']);
-            $table->decimal('amount');
-            $table->decimal('price');
-            $table->decimal('total');
+            $table->string('crypto_id', 50);
+            $table->string('crypto_symbol', 10); # Abbreviation of the crypto currency lower case ('btc', 'eth')
+            $table->string('crypto_name', 50);
+            $table->boolean('sell')->default(false);
+            $table->decimal('amount', 25, 8);
+            $table->decimal('price', 25, 8);
+            $table->decimal('total', 25, 8);
             $table->tinyText('currency')->default('CHF');
             $table->date('date');
-
-            $table->foreignId('currency_id')->constrained('crypto_currencies');
         });
     }
 

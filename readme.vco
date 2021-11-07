@@ -6,3 +6,8 @@ http://localhost:8000/
 
 For pgadmin4:
 http://localhost/pgadmin4/
+
+
+After new routes:
+php artisan route:cache
+php artisan route:list
